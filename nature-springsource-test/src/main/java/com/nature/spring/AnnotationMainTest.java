@@ -9,12 +9,14 @@ public class AnnotationMainTest {
 		ApplicationContext context = new AnnotationConfigApplicationContext(MyConfig.class);
 //		Person person = context.getBean(Person.class);
 //		System.out.println("person = " + person);
+//		System.out.println("中文不乱码");
+
 
 		//获取所有的beanName
-		String[] beanDefinitionNames = context.getBeanDefinitionNames();
-		for (String beanDefinitionName : beanDefinitionNames) {
-			System.out.println("beanDefinitionName = " + beanDefinitionName);
-		}
+//		String[] beanDefinitionNames = context.getBeanDefinitionNames();
+//		for (String beanDefinitionName : beanDefinitionNames) {
+//			System.out.println("beanDefinitionName = " + beanDefinitionName);
+//		}
 //		Cat cat1 = context.getBean(Cat.class);
 //		Cat cat2 = context.getBean(Cat.class);
 //		System.out.println(cat1==cat2);//false

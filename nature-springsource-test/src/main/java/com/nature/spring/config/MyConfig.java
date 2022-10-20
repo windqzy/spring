@@ -13,7 +13,7 @@ import org.springframework.core.type.AnnotationMetadata;
 /**
  * 我的配置类
  */
-@Import(Person.class)
+//@Import(Person.class)
 //@Import({Person.class, MyImportBeanDefinitionRegistrar.class})
 //@Import(MyImportBeanDefinitionRegistrar.class)
 @ComponentScan("com.nature.spring")
@@ -28,7 +28,7 @@ public class MyConfig {
 
 
 	/**
-	 * 1.使用xml的方式创建ioc容器
+	 * 1.使用xml的方式创建ioc容器![](../../../../../../../../../../../../var/folders/fj/g9g23z0128b70yk5jg5tm47h0000gn/T/TemporaryItems/NSIRD_screencaptureui_djZnLn/截屏2022-10-13 14.44.46.png)
 	 * 2.使用注解的方式创建ioc容器
 	 *   @Configuration, ImportSelector, ImportBeanDefinitionRegistrar, or regular component classes to import.
 	 *   注解方式1：@Configuration
@@ -36,7 +36,5 @@ public class MyConfig {
 	 *   注解方式3：@Import(类字面常量数组)：利用无参构造器创建
 	 *   注解方式4：@ImportSelector
 	 *   注解方式5：@ImportBeanDefinitionRegistrar 实现ImportBeanDefinitionRegistrar接口后Import
-	 *	 注解方式6：
-	 *
 	 */
 }

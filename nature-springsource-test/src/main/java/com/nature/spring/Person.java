@@ -2,7 +2,9 @@ package com.nature.spring;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Lookup;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Person {
 	private String name;
 
@@ -21,6 +23,7 @@ public class Person {
 	public Cat getCat() {
 		return cat;
 	}
+
 
 	public void setCat(Cat cat) {
 		this.cat = cat;

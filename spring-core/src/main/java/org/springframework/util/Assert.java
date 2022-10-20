@@ -24,23 +24,26 @@ import org.springframework.lang.Nullable;
 
 /**
  * Assertion utility class that assists in validating arguments.
- *
+ * 断言工具类：协助验证参数
  * <p>Useful for identifying programmer errors early and clearly at runtime.
- *
+ * 用于在运行时尽早的和清楚的确认错误
  * <p>For example, if the contract of a public method states it does not
  * allow {@code null} arguments, {@code Assert} can be used to validate that
- * contract. Doing this clearly indicates a contract violation when it
+ * contract.
+ * 例如：方法不允许一个null的参数，Assert通常被用于验证这个。
+ * Doing this clearly indicates a contract violation when it
  * occurs and protects the class's invariants.
- *
+ * 这样做可以清楚的表明一个违反了一个合同并且保护类的不变量。
  * <p>Typically used to validate method arguments rather than configuration
  * properties, to check for cases that are usually programmer errors rather
  * than configuration errors. In contrast to configuration initialization
  * code, there is usually no point in falling back to defaults in such methods.
- *
+ * 通常用于验证方法参数而不是配置属性，检查的是程序错误而不是配置错误。
+ * 与配置初始化代码对比，它可以指出一些方法的默认返回值
  * <p>This class is similar to JUnit's assertion library. If an argument value is
  * deemed invalid, an {@link IllegalArgumentException} is thrown (typically).
+ * 这个类单元测试断言类库相似。
  * For example:
- *
  * <pre class="code">
  * Assert.notNull(clazz, "The class must not be null");
  * Assert.isTrue(i &gt; 0, "The value must be greater than zero");</pre>
