@@ -27,8 +27,10 @@ public class AnnotationMainTest {
 
 		Person p1 = context.getBean(Person.class);
 		Cat cat1 = p1.getCat();
+		System.out.println("cat1 = " + cat1);
 		Person p2 = context.getBean(Person.class);
 		Cat cat2 = p2.getCat();
+		System.out.println("cat2 = " + cat2);
 		System.out.println(cat1==cat2);//true
 
 
