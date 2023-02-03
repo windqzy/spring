@@ -19,6 +19,7 @@ package org.springframework.beans.factory;
 import org.springframework.lang.Nullable;
 
 /**
+ * 定义工厂间父子关系的工厂：可以获取父工厂
  * Sub-interface implemented by bean factories that can be part
  * of a hierarchy.
  *

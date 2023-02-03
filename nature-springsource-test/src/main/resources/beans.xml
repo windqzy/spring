@@ -5,4 +5,8 @@
 	<bean id="person" class="com.nature.spring.Person">
 		<property name="name" value="nature"></property>
 	</bean>
+
+	<bean id="cat" class="com.nature.spring.Cat">
+		<property name="name" value="cat"></property>
+	</bean>
 </beans>
