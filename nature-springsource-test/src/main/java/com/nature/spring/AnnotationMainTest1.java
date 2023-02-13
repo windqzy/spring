@@ -18,7 +18,5 @@ public class AnnotationMainTest1 {
 		LearnAware1 learnAware1 = context.getBean(LearnAware1.class);
 		ApplicationContext learnApplicationContext1 = learnAware1.getApplicationContext();
 		System.out.println(learnApplicationContext1 == context);//true
-
-
 	}
 }

@@ -11,6 +11,15 @@ public class LearnAware1 implements ApplicationContextAware {
 
 	private ApplicationContext applicationContext;
 
+
+	public LearnAware1() {
+		System.out.println("name = " + name);
+	}
+
+	public LearnAware1(String name) {
+		System.out.println("name = " + name);
+	}
+
 	@Override
 	public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
 		this.applicationContext = applicationContext;

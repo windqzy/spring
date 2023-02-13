@@ -13,6 +13,13 @@ public class LearnAware {
 
 	@Autowired
 	private ApplicationContext learnApplicationContext;
+	public LearnAware() {
+		System.out.println("name = " + name);
+	}
+
+	public LearnAware(String name) {
+		System.out.println("name = " + name);
+	}
 
 	public ApplicationContext getLearnApplicationContext() {
 		return learnApplicationContext;
