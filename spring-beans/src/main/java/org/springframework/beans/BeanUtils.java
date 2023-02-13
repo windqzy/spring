@@ -865,7 +865,6 @@ public abstract class BeanUtils {
 		 */
 		public static <T> T instantiateClass(Constructor<T> ctor, Object... args)
 				throws IllegalAccessException, InvocationTargetException, InstantiationException {
-
 			KFunction<T> kotlinConstructor = ReflectJvmMapping.getKotlinFunction(ctor);
 			if (kotlinConstructor == null) {
 				return ctor.newInstance(args);

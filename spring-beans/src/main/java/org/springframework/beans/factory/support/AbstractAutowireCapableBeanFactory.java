@@ -120,7 +120,7 @@ import org.springframework.util.function.ThrowingSupplier;
 public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFactory
 		implements AutowireCapableBeanFactory {
 
-	/** Strategy for creating bean instances. */
+	/** 创建bean的初始化策略：可以用jdk反射 可以用cglib Strategy for creating bean instances. */
 	private InstantiationStrategy instantiationStrategy;
 
 	/** Resolver strategy for method parameter names. */
@@ -1737,6 +1737,7 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
 	 * @see #applyBeanPostProcessorsAfterInitialization
 	 */
 	protected Object initializeBean(String beanName, Object bean, @Nullable RootBeanDefinition mbd) {
+		//调用自动装配的代码
 		invokeAwareMethods(beanName, bean);
 
 		Object wrappedBean = bean;
