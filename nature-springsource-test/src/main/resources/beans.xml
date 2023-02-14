@@ -9,4 +9,9 @@
 	<bean id="cat" class="com.nature.spring.bean.Cat">
 		<property name="name" value="cat"></property>
 	</bean>
+
+	<!--工厂bean-->
+	<bean id="hello" class="com.nature.spring.bean.HelloFactoryBean">
+
+	</bean>
 </beans>

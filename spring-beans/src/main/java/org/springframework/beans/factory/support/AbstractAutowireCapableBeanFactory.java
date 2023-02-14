@@ -597,9 +597,10 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
 			addSingletonFactory(beanName, () -> getEarlyBeanReference(beanName, mbd, bean));
 		}
 
-		// Initialize the bean instance.
+		//初始化bean实例： Initialize the bean instance.
 		Object exposedObject = bean;
 		try {
+			//给创建好的对象的每个属性赋值
 			populateBean(beanName, mbd, instanceWrapper);
 			exposedObject = initializeBean(beanName, exposedObject, mbd);
 		}
@@ -1194,6 +1195,7 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
 		}
 
 		// No special handling: simply use no-arg constructor.
+		// 没有特别的处理：简单的使用无参构造器实例化bean实例
 		return instantiateBean(beanName, mbd);
 	}
 
@@ -1373,6 +1375,7 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
 			}
 		}
 
+		//获取bean定义文件中的属性
 		PropertyValues pvs = (mbd.hasPropertyValues() ? mbd.getPropertyValues() : null);
 
 		int resolvedAutowireMode = mbd.getResolvedAutowireMode();
@@ -1409,6 +1412,7 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
 			checkDependencies(beanName, mbd, filteredPds, pvs);
 		}
 
+		//根据bean定义中解析出来的属性给bean实例对象赋值
 		if (pvs != null) {
 			applyPropertyValues(beanName, mbd, bw, pvs);
 		}
