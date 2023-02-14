@@ -1756,7 +1756,9 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
 			throw new BeanCreationException(
 					(mbd != null ? mbd.getResourceDescription() : null), beanName, ex.getMessage(), ex);
 		}
+		//功能增强：自动装配怎么实现的？
 		if (mbd == null || !mbd.isSynthetic()) {
+			//bean的后置处理器初始化步骤：自动装配的功能
 			wrappedBean = applyBeanPostProcessorsAfterInitialization(wrappedBean, beanName);
 		}
 

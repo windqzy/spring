@@ -86,6 +86,7 @@ class ApplicationContextAwareProcessor implements BeanPostProcessor {
 		return bean;
 	}
 
+	//自动装配：利用多态的特性调用相关set方法：实现回调
 	private void invokeAwareInterfaces(Object bean) {
 		if (bean instanceof EnvironmentAware) {
 			((EnvironmentAware) bean).setEnvironment(this.applicationContext.getEnvironment());

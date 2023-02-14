@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 public class Person {
 	private String name;
 	//  依赖的组件是原型模式的组件就不能用autowired
-	@Autowired
+//	@Autowired
 	private Cat cat;
 
 	public String getName() {
@@ -25,6 +25,7 @@ public class Person {
 		return cat;
 	}
 
+	@Autowired
 	public void setCat(Cat cat) {
 		this.cat = cat;
 	}
