@@ -1,5 +1,7 @@
 package com.nature.spring;
 
+import com.nature.spring.bean.Cat;
+import com.nature.spring.bean.Person;
 import com.nature.spring.config.MyConfig;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;

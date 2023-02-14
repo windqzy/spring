@@ -1,14 +1,6 @@
 package com.nature.spring.config;
 
-import com.nature.spring.Cat;
-import com.nature.spring.Person;
-import com.nature.spring.register.MyImportBeanDefinitionRegistrar;
-import org.springframework.beans.factory.config.BeanDefinition;
-import org.springframework.beans.factory.support.BeanDefinitionRegistry;
-import org.springframework.beans.factory.support.BeanNameGenerator;
-import org.springframework.beans.factory.support.RootBeanDefinition;
 import org.springframework.context.annotation.*;
-import org.springframework.core.type.AnnotationMetadata;
 
 /**
  * 我的配置类

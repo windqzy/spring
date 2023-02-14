@@ -1,10 +1,7 @@
-package com.nature.spring.register;
+package com.nature.spring.bean;
 
-import com.nature.spring.Cat;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Lookup;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
 @Component

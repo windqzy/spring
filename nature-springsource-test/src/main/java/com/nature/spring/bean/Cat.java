@@ -1,4 +1,4 @@
-package com.nature.spring;
+package com.nature.spring.bean;
 
 
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;

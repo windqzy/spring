@@ -1,4 +1,4 @@
-package com.nature.spring.register;
+package com.nature.spring.bean;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;

@@ -1,5 +1,6 @@
 package com.nature.spring;
 
+import com.nature.spring.bean.Person;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class MainTest {

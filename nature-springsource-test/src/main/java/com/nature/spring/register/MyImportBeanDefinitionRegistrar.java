@@ -1,7 +1,6 @@
 package com.nature.spring.register;
 
-import com.nature.spring.Cat;
-import org.springframework.beans.factory.config.BeanDefinition;
+import com.nature.spring.bean.Cat;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.beans.factory.support.RootBeanDefinition;
 import org.springframework.context.annotation.ImportBeanDefinitionRegistrar;

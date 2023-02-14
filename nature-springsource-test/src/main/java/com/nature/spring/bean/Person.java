@@ -1,4 +1,4 @@
-package com.nature.spring;
+package com.nature.spring.bean;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Lookup;
