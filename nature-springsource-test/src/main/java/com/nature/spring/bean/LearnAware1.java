@@ -5,7 +5,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 //实现ApplicationContextAware接口 回调的方式实现
-@Component
+//@Component
 public class LearnAware1 implements ApplicationContextAware {
 	private String name;
 

@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Lookup;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class Person {
 	private String name;
 	//  依赖的组件是原型模式的组件就不能用autowired
