@@ -26,6 +26,7 @@ public class MyBeanDefinitionRegistryPostProcessor2 implements BeanDefinitionReg
 
 	@Override
 	public void postProcessBeanDefinitionRegistry(BeanDefinitionRegistry registry) throws BeansException {
+		//对BeanDefinitionRegistry的增强功能代码，比如自己组册组件
 		System.out.println("MyBeanDefinitionRegistryPostProcessor2...postProcessBeanDefinitionRegistry...Override");
 	}
 
