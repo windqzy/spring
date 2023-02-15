@@ -3,15 +3,17 @@ package com.nature.spring.processor.bean;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.PropertyValues;
 import org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessor;
+import org.springframework.stereotype.Component;
 
 /**
  * @author qinzhiying
  * @date 2023/02/14 18:11
  **/
+@Component
 public class MyInstantiationAwareBeanPostProcessor implements InstantiationAwareBeanPostProcessor {
 
 	public MyInstantiationAwareBeanPostProcessor() {
-		System.out.println("MyInstantiationAwareBeanPostProcessor");
+		System.out.println("MyInstantiationAwareBeanPostProcessor...constructor");
 	}
 
 	@Override

@@ -4,6 +4,7 @@ import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.beans.factory.support.BeanDefinitionRegistryPostProcessor;
+import org.springframework.core.Ordered;
 import org.springframework.core.PriorityOrdered;
 import org.springframework.stereotype.Component;
 
@@ -12,24 +13,24 @@ import org.springframework.stereotype.Component;
  * @date 2023/02/14 18:02
  **/
 @Component
-public class MyBeanDefinitionRegistryPostProcessor implements BeanDefinitionRegistryPostProcessor, PriorityOrdered {
+public class MyBeanDefinitionRegistryPostProcessor2 implements BeanDefinitionRegistryPostProcessor, Ordered {
 
-	public MyBeanDefinitionRegistryPostProcessor() {
-		System.out.println("MyBeanDefinitionRegistryPostProcessor...constructor");
+	public MyBeanDefinitionRegistryPostProcessor2() {
+		System.out.println("MyBeanDefinitionRegistryPostProcessor2...constructor");
 	}
 
 	@Override
 	public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
-		System.out.println("MyBeanDefinitionRegistryPostProcessor....postProcessBeanFactory...Override");
+		System.out.println("MyBeanDefinitionRegistryPostProcessor2....postProcessBeanFactory...Override");
 	}
 
 	@Override
 	public void postProcessBeanDefinitionRegistry(BeanDefinitionRegistry registry) throws BeansException {
-		System.out.println("MyBeanDefinitionRegistryPostProcessor...postProcessBeanDefinitionRegistry...Override");
+		System.out.println("MyBeanDefinitionRegistryPostProcessor2...postProcessBeanDefinitionRegistry...Override");
 	}
 
 	@Override
 	public int getOrder() {
-		return 1;
+		return 0;
 	}
 }

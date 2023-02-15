@@ -3,14 +3,16 @@ package com.nature.spring.processor.bean;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.support.MergedBeanDefinitionPostProcessor;
 import org.springframework.beans.factory.support.RootBeanDefinition;
+import org.springframework.stereotype.Component;
 
 /**
  * @author qinzhiying
  * @date 2023/02/14 18:15
  **/
+@Component
 public class MyMergedBeanDefinitionPostProcessor implements MergedBeanDefinitionPostProcessor {
 	public MyMergedBeanDefinitionPostProcessor() {
-		System.out.println("MyMergedBeanDefinitionPostProcessor");
+		System.out.println("MyMergedBeanDefinitionPostProcessor...constructor");
 	}
 
 	@Override

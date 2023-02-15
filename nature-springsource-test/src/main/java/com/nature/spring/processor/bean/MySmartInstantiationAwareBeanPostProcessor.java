@@ -3,6 +3,7 @@ package com.nature.spring.processor.bean;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.PropertyValues;
 import org.springframework.beans.factory.config.SmartInstantiationAwareBeanPostProcessor;
+import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Constructor;
 
@@ -10,9 +11,10 @@ import java.lang.reflect.Constructor;
  * @author qinzhiying
  * @date 2023/02/14 18:18
  **/
+@Component
 public class MySmartInstantiationAwareBeanPostProcessor implements SmartInstantiationAwareBeanPostProcessor {
 	public MySmartInstantiationAwareBeanPostProcessor() {
-		System.out.println("MySmartInstantiationAwareBeanPostProcessor");
+		System.out.println("MySmartInstantiationAwareBeanPostProcessor...constructor");
 	}
 
 	@Override
