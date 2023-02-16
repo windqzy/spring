@@ -161,5 +161,4 @@ public class SimpleInstantiationStrategy implements InstantiationStrategy {
 			throw new BeanInstantiationException(factoryMethod, msg, ex.getTargetException());
 		}
 	}
-
 }

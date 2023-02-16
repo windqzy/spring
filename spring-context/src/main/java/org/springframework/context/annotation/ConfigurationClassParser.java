@@ -166,6 +166,7 @@ class ConfigurationClassParser {
 	}
 
 
+	//解析所有的配置类
 	public void parse(Set<BeanDefinitionHolder> configCandidates) {
 		for (BeanDefinitionHolder holder : configCandidates) {
 			BeanDefinition bd = holder.getBeanDefinition();
@@ -307,6 +308,7 @@ class ConfigurationClassParser {
 		}
 
 		// Process any @Import annotations
+		// 处理各种注解相关的配置类
 		processImports(configClass, sourceClass, getImports(sourceClass), filter, true);
 
 		// Process any @ImportResource annotations
