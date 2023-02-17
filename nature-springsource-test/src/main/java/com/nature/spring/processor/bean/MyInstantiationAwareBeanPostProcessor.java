@@ -27,7 +27,8 @@ public class MyInstantiationAwareBeanPostProcessor implements InstantiationAware
 		System.out.println("MyInstantiationAwareBeanPostProcessor...postProcessAfterInitialization...Override");
 		return null;
 	}
-
+	//postProcessBeforeInstantiation:Spring提供给我们给这个组件创建对象的回调。
+	//可以自己创建对象返回成功，Spring则不会帮我们创建对象了
 	@Override
 	public Object postProcessBeforeInstantiation(Class<?> beanClass, String beanName) throws BeansException {
 		System.out.println("MyInstantiationAwareBeanPostProcessor...postProcessBeforeInstantiation...Override");

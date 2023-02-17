@@ -53,12 +53,13 @@ public class MySmartInstantiationAwareBeanPostProcessor implements SmartInstanti
 		return beanClass;
 	}
 
+	//determineCandidateConstructors：决定创建bean使用的构造器
 	@Override
 	public Constructor<?>[] determineCandidateConstructors(Class<?> beanClass, String beanName) throws BeansException {
 		System.out.println("MySmartInstantiationAwareBeanPostProcessor...determineCandidateConstructors...Override");
 		return null;
 	}
-
+	//getEarlyBeanReference：获取早期的bean引用
 	@Override
 	public Object getEarlyBeanReference(Object bean, String beanName) throws BeansException {
 		System.out.println("MySmartInstantiationAwareBeanPostProcessor...getEarlyBeanReference...Override");
