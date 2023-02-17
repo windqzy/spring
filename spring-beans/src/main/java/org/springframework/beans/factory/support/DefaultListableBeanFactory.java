@@ -547,9 +547,11 @@ public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFacto
 		List<String> result = new ArrayList<>();
 
 		// Check all bean definitions.
+		//因为ioc容器中没有维护class和bean之间的反向关系
+		//所以想要知道找到某个类型的组件：就需要先获取所有的beanNames，再根据beanName获取bendefinitionNames，再beanDefinitionName判断是什么类型的组件
 		for (String beanName : this.beanDefinitionNames) {
 			// Only consider bean as eligible if the bean name is not defined as alias for some other bean.
-			if (!isAlias(beanName)) {
+			if (!isAlias(beanName)) {//判断是当前name是组件的别名
 				try {
 					RootBeanDefinition mbd = getMergedLocalBeanDefinition(beanName);
 					// Only check bean definition if it is complete.
@@ -562,7 +564,9 @@ public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFacto
 						boolean allowFactoryBeanInit = (allowEagerInit || containsSingleton(beanName));
 						boolean isNonLazyDecorated = (dbd != null && !mbd.isLazyInit());
 						if (!isFactoryBean) {
+							//没有创建的bean才会进入isTypeMatch，从而在创建前干预
 							if (includeNonSingletons || isSingleton(beanName, mbd, dbd)) {
+								//是否类型匹配：监听器和后置处理器之间有什么关系？
 								matchFound = isTypeMatch(beanName, type, allowFactoryBeanInit);
 							}
 						}

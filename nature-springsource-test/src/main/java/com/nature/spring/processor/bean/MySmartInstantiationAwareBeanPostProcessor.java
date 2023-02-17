@@ -46,7 +46,7 @@ public class MySmartInstantiationAwareBeanPostProcessor implements SmartInstanti
 		System.out.println("MySmartInstantiationAwareBeanPostProcessor...postProcessProperties...Override");
 		return pvs;
 	}
-
+	//predictBeanType：决定当前组件类型：并干预组件的类型
 	@Override
 	public Class<?> predictBeanType(Class<?> beanClass, String beanName) throws BeansException {
 		System.out.println("MySmartInstantiationAwareBeanPostProcessor...predictBeanType...Override");
