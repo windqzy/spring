@@ -13,7 +13,7 @@ public class MyBeanPostProcessor implements BeanPostProcessor {
 	public MyBeanPostProcessor() {
 		System.out.println("MyBeanPostPostProcessor...constructor");
 	}
-
+	//给机会改变之前创建的bean实例
 	@Override
 	public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
 		System.out.println("MyBeanPostProcessor...postProcessBeanFactory...Override");

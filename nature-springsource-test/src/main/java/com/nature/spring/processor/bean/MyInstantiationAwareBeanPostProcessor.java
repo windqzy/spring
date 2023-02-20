@@ -15,7 +15,7 @@ public class MyInstantiationAwareBeanPostProcessor implements InstantiationAware
 	public MyInstantiationAwareBeanPostProcessor() {
 		System.out.println("MyInstantiationAwareBeanPostProcessor...constructor");
 	}
-
+	//
 	@Override
 	public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
 		System.out.println("MyInstantiationAwareBeanPostProcessor...postProcessBeforeInitialization...Override");
@@ -34,13 +34,13 @@ public class MyInstantiationAwareBeanPostProcessor implements InstantiationAware
 		System.out.println("MyInstantiationAwareBeanPostProcessor...postProcessBeforeInstantiation...Override");
 		return null;
 	}
-
+	//postProcessAfterInstantiation：实例化对象之后对对象做一些事情
 	@Override
 	public boolean postProcessAfterInstantiation(Object bean, String beanName) throws BeansException {
 		System.out.println("MyInstantiationAwareBeanPostProcessor...postProcessAfterInstantiation...Override");
 		return true;
 	}
-
+	//postProcessProperties：属性赋值的时候做一些事情：pvs封装了所有的属性信息
 	@Override
 	public PropertyValues postProcessProperties(PropertyValues pvs, Object bean, String beanName) throws BeansException {
 		System.out.println("MyInstantiationAwareBeanPostProcessor...postProcessProperties...Override");

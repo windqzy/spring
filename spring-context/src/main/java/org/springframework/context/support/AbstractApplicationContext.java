@@ -620,7 +620,7 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 				// Reset common introspection caches in Spring's core, since we
 				// might not ever need metadata for singleton beans anymore...
 				resetCommonCaches();
-				contextRefresh.end();
+ 				contextRefresh.end();
 			}
 		}
 	}

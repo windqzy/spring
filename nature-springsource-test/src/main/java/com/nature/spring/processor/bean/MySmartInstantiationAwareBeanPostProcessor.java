@@ -34,7 +34,7 @@ public class MySmartInstantiationAwareBeanPostProcessor implements SmartInstanti
 		System.out.println("MySmartInstantiationAwareBeanPostProcessor...postProcessBeforeInstantiation...Override");
 		return null;
 	}
-
+	//
 	@Override
 	public boolean postProcessAfterInstantiation(Object bean, String beanName) throws BeansException {
 		System.out.println("MySmartInstantiationAwareBeanPostProcessor...postProcessAfterInstantiation...Override");
