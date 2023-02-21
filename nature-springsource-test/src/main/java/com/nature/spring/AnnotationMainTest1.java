@@ -11,12 +11,12 @@ public class AnnotationMainTest1 {
 		ApplicationContext context = new AnnotationConfigApplicationContext(MyConfig.class);
 
 		//自动注入的applicationContext是同一个么？
-		LearnAware learnAware = context.getBean(LearnAware.class);
-		ApplicationContext learnApplicationContext = learnAware.getLearnApplicationContext();
-		System.out.println(learnApplicationContext == context);//true
-
-		LearnAware1 learnAware1 = context.getBean(LearnAware1.class);
-		ApplicationContext learnApplicationContext1 = learnAware1.getApplicationContext();
-		System.out.println(learnApplicationContext1 == context);//true
+//		LearnAware learnAware = context.getBean(LearnAware.class);
+//		ApplicationContext learnApplicationContext = learnAware.getLearnApplicationContext();
+//		System.out.println(learnApplicationContext == context);//true
+//
+//		LearnAware1 learnAware1 = context.getBean(LearnAware1.class);
+//		ApplicationContext learnApplicationContext1 = learnAware1.getApplicationContext();
+//		System.out.println(learnApplicationContext1 == context);//true
 	}
 }

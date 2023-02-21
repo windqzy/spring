@@ -8,7 +8,7 @@ public class MainTest1 {
 	public static void main(String[] args) {
 		//基于xml的bean
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("beans1.xml");
-		Hello bean = context.getBean(Hello.class);
+//		Hello bean = context.getBean(Hello.class);
 	}
 }
 
