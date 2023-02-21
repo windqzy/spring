@@ -22,7 +22,7 @@ public class MySmartInstantiationAwareBeanPostProcessor implements SmartInstanti
 		System.out.println("MySmartInstantiationAwareBeanPostProcessor...postProcessBeforeInitialization...Override");
 		return bean;
 	}
-
+	//初始化前后 实例化前后
 	@Override
 	public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
 		System.out.println("MySmartInstantiationAwareBeanPostProcessor...postProcessAfterInitialization...Override");

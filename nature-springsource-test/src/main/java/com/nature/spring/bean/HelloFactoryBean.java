@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
  * @author qinzhiying
  * @date 2023/02/14 10:21
  **/
-//@Component
+@Component//也可以实现SmartFactoryBean 实现立即生产
 public class HelloFactoryBean implements FactoryBean<Hello> {
 	@Override
 	public Hello getObject() throws Exception {

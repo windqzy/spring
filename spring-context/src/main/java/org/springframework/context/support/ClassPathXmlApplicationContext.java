@@ -140,6 +140,7 @@ public class ClassPathXmlApplicationContext extends AbstractXmlApplicationContex
 
 		super(parent);
 		setConfigLocations(configLocations);
+		//构造器里面刷新环境
 		if (refresh) {
 			refresh();
 		}
