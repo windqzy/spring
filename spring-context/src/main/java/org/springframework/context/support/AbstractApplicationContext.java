@@ -556,19 +556,20 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 			StartupStep contextRefresh = this.applicationStartup.start("spring.context.refresh");
 
 			// Prepare this context for refreshing.
-			// 第一步：为刷新准备环境
+			// 第一步：为刷新准备环境：环境的一些属性设置
 			prepareRefresh();
 
-			//第二步：beanFactory第一次创建的时候，告诉子类去刷新内部beanFactory
+			//第二步：beanFactory第一次创建的时候，告诉子类去刷新内部beanFactory：获取工厂，并且工厂设置序列化id
 			// Tell the subclass to refresh the internal bean factory.
 			ConfigurableListableBeanFactory beanFactory = obtainFreshBeanFactory();
 
 			// Prepare the bean factory for use in this context.
-			// 准备在环境中使用beanFactory
+			// 第三步：准备在环境中使用beanFactory前的准备工作：添加一些内置的后置处理器bean定义 添加一些组件到单例池中等
 			prepareBeanFactory(beanFactory);
 
 			try {
 				// Allows post-processing of the bean factory in context subclasses.
+				// 工厂的后置处理:
 				postProcessBeanFactory(beanFactory);
 
 				StartupStep beanPostProcess = this.applicationStartup.start("spring.context.beans.post-process");
@@ -713,8 +714,11 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 		beanFactory.addPropertyEditorRegistrar(new ResourceEditorRegistrar(this, getEnvironment()));
 
 		// Configure the bean factory with context callbacks.
-		//配置bean工厂
+		// 配置bean工厂：后置处理器列表beanPostProcessors数组中添加一个ApplicationContextAwareProcessor
+		// 在后置处理的环节判断某个bean是否实现了XXXXAware接口，从而回调将一些组件set进去
 		beanFactory.addBeanPostProcessor(new ApplicationContextAwareProcessor(this));
+		// ignoreDependencyInterface（hashset）本质上是操作beanfactory的
+		// 创建的时候忽略的一些接口
 		beanFactory.ignoreDependencyInterface(EnvironmentAware.class);
 		beanFactory.ignoreDependencyInterface(EmbeddedValueResolverAware.class);
 		beanFactory.ignoreDependencyInterface(ResourceLoaderAware.class);
@@ -725,12 +729,14 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 
 		// BeanFactory interface not registered as resolvable type in a plain factory.
 		// MessageSource registered (and found for autowiring) as a bean.
+		// 一些组件可以自动装配this：这是为啥可以@autowire ApplicationContext 的原因
 		beanFactory.registerResolvableDependency(BeanFactory.class, beanFactory);
 		beanFactory.registerResolvableDependency(ResourceLoader.class, this);
 		beanFactory.registerResolvableDependency(ApplicationEventPublisher.class, this);
 		beanFactory.registerResolvableDependency(ApplicationContext.class, this);
 
 		// Register early post-processor for detecting inner beans as ApplicationListeners.
+		// 配置bean工厂：添加后置处理器：作为容器监听器监听内部bean
 		beanFactory.addBeanPostProcessor(new ApplicationListenerDetector(this));
 
 		// Detect a LoadTimeWeaver and prepare for weaving, if found.
@@ -741,15 +747,19 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 		}
 
 		// Register default environment beans.
+		// 注册默认的bean：也是单例池中的第一个bean：environment
 		if (!beanFactory.containsLocalBean(ENVIRONMENT_BEAN_NAME)) {
 			beanFactory.registerSingleton(ENVIRONMENT_BEAN_NAME, getEnvironment());
 		}
+		// 注册默认的bean：也是单例池中的第二个bean：systemProperties
 		if (!beanFactory.containsLocalBean(SYSTEM_PROPERTIES_BEAN_NAME)) {
 			beanFactory.registerSingleton(SYSTEM_PROPERTIES_BEAN_NAME, getEnvironment().getSystemProperties());
 		}
+		// 注册默认的bean：也是单例池中的第三个bean：systemEnvironment
 		if (!beanFactory.containsLocalBean(SYSTEM_ENVIRONMENT_BEAN_NAME)) {
 			beanFactory.registerSingleton(SYSTEM_ENVIRONMENT_BEAN_NAME, getEnvironment().getSystemEnvironment());
 		}
+		// 注册默认的bean：也是单例池中的第四个bean：applicationStartup
 		if (!beanFactory.containsLocalBean(APPLICATION_STARTUP_BEAN_NAME)) {
 			beanFactory.registerSingleton(APPLICATION_STARTUP_BEAN_NAME, getApplicationStartup());
 		}
