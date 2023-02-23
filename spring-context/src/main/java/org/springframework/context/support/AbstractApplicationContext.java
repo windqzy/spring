@@ -569,36 +569,43 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 
 			try {
 				// Allows post-processing of the bean factory in context subclasses.
-				// 工厂的后置处理:
+				// 第四步：允许子类增强：工厂的后置处理:工厂的后置处理什么都没有做
 				postProcessBeanFactory(beanFactory);
 
 				StartupStep beanPostProcess = this.applicationStartup.start("spring.context.beans.post-process");
 				// Invoke factory processors registered as beans in the context.
-				// 在环境中，调用作为组件存在的工厂增强器（组件定义注册中心 和 bean工厂组件）
+				// 第五步：在环境中，一些关于工厂后置处理器的调用：（工厂：注册中心工厂增强 工厂增强）例如bean定义前后相关的增强器的注册和调用
+				// 很重要的功能：解析配置类：配置类中如果包含包扫描：则会添加所有的bean定义进去
 				invokeBeanFactoryPostProcessors(beanFactory);
 
 				// Register bean processors that intercept bean creation.
-				// 注册bean创建的后置处理器
+				// 第六步：在环境中，一些关于bean创建的后置处理器的注册：添加到工厂的BeanPostProcessor
 				registerBeanPostProcessors(beanFactory);
 				beanPostProcess.end();
 
 				// Initialize message source for this context.
+				// 第七步：在环境中，注册一个国际化组件
 				initMessageSource();
 
 				// Initialize event multicaster for this context.
+				// 第八步：初始化上下文中的事件广播
 				initApplicationEventMulticaster();
 
 				// Initialize other special beans in specific context subclasses.
+				// 第九步：留给子类实现：增强工厂功能
 				onRefresh();
-				// 检查监听器bean并且注册他们
+
 				// Check for listener beans and register them.
+				// 第十步：检查监听器bean并且注册他们（多播器和监听器是观察者模式）
 				registerListeners();
 
 				// Instantiate all remaining (non-lazy-init) singletons.
-				// 完成bean工厂的初始化
+				// 第十一步：完成bean工厂的初始化：遍历所有beanNames
+				//给beanfactory装配类型转换器组件+值解析器（${}）类型+实例化所有单例bean
 				finishBeanFactoryInitialization(beanFactory);
 
 				// Last step: publish corresponding event.
+				// 第十二步：清楚多余的缓存+添加生命周期处理器
 				finishRefresh();
 			}
 
@@ -781,6 +788,7 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 	 * <p>Must be called before singleton instantiation.
 	 */
 	protected void invokeBeanFactoryPostProcessors(ConfigurableListableBeanFactory beanFactory) {
+		//invokeBeanFactoryPostProcessors bean工厂后置处理（bean定义中心 工厂）
 		PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(beanFactory, getBeanFactoryPostProcessors());
 
 		// Detect a LoadTimeWeaver and prepare for weaving, if found in the meantime
@@ -807,6 +815,7 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 	 */
 	protected void initMessageSource() {
 		ConfigurableListableBeanFactory beanFactory = getBeanFactory();
+		//添加国际化组件到beanFactory中
 		if (beanFactory.containsLocalBean(MESSAGE_SOURCE_BEAN_NAME)) {
 			this.messageSource = beanFactory.getBean(MESSAGE_SOURCE_BEAN_NAME, MessageSource.class);
 			// Make MessageSource aware of parent MessageSource.
@@ -939,13 +948,13 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 		// Register a default embedded value resolver if no BeanFactoryPostProcessor
 		// (such as a PropertySourcesPlaceholderConfigurer bean) registered any before:
 		// at this point, primarily for resolution in annotation attribute values.
-		// 注册一个值解析器（${}）
+		// 注册一个值解析器（${}）类型
 		if (!beanFactory.hasEmbeddedValueResolver()) {
 			beanFactory.addEmbeddedValueResolver(strVal -> getEnvironment().resolvePlaceholders(strVal));
 		}
 
 		// Initialize LoadTimeWeaverAware beans early to allow for registering their transformers early.
-		//
+		// 为织入创建bean
 		String[] weaverAwareNames = beanFactory.getBeanNamesForType(LoadTimeWeaverAware.class, false, false);
 		for (String weaverAwareName : weaverAwareNames) {
 			getBean(weaverAwareName);

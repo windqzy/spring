@@ -94,6 +94,7 @@ final class PostProcessorRegistrationDelegate {
 					registryProcessors.add(registryProcessor);
 				}
 				else {
+					//添加普通的PostProcessors
 					regularPostProcessors.add(postProcessor);
 				}
 			}
@@ -111,6 +112,7 @@ final class PostProcessorRegistrationDelegate {
 			for (String ppName : postProcessorNames) {
 				//看当前BeanDefinitionRegistryPostProcessor是否实现PriorityOrdered接口
 				if (beanFactory.isTypeMatch(ppName, PriorityOrdered.class)) {
+					//在此处创建工厂后置处理器getBean
 					currentRegistryProcessors.add(beanFactory.getBean(ppName, BeanDefinitionRegistryPostProcessor.class));
 					processedBeans.add(ppName);
 				}
@@ -255,6 +257,7 @@ final class PostProcessorRegistrationDelegate {
 		for (String ppName : postProcessorNames) {
 			//实现PriorityOrdered接口的bean后置处理器
 			if (beanFactory.isTypeMatch(ppName, PriorityOrdered.class)) {
+				//在这里创建后置处理器
 				BeanPostProcessor pp = beanFactory.getBean(ppName, BeanPostProcessor.class);
 				priorityOrderedPostProcessors.add(pp);
 				//如果是MergedBeanDefinitionPostProcessor后置处理器的实例，就作为内部后置处理器
@@ -307,7 +310,7 @@ final class PostProcessorRegistrationDelegate {
 
 		// Re-register post-processor for detecting inner beans as ApplicationListeners,
 		// moving it to the end of the processor chain (for picking up proxies etc).
-		//
+		// 重新注册ApplicationListenerDetector 放在后置post-processor处理的最后
 		beanFactory.addBeanPostProcessor(new ApplicationListenerDetector(applicationContext));
 	}
 
