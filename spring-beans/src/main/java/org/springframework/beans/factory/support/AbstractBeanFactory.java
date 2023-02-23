@@ -302,7 +302,7 @@ public abstract class AbstractBeanFactory extends FactoryBeanRegistrySupport imp
 					beanCreation.tag("beanType", requiredType::toString);
 				}
 				RootBeanDefinition mbd = getMergedLocalBeanDefinition(beanName);
-				//检查猫的定义信息
+				//检查bean的定义信息
 				checkMergedBeanDefinition(mbd, beanName, args);
 
 				// Guarantee initialization of beans that the current bean depends on.

@@ -616,6 +616,7 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
 		}
 
 		//初始化bean实例： Initialize the bean instance.
+		//早期暴露的对象
 		Object exposedObject = bean;
 		try {
 			//给创建好的对象的每个属性赋值：自动装配在此
@@ -965,8 +966,10 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
 	 * @return the object to expose as bean reference
 	 */
 	protected Object getEarlyBeanReference(String beanName, RootBeanDefinition mbd, Object bean) {
+		//将bean传入
 		Object exposedObject = bean;
 		if (!mbd.isSynthetic() && hasInstantiationAwareBeanPostProcessors()) {
+			//如果增强器组件可以返回早期的bean引用 则使用返回的，没有返回则使用传入的bean
 			for (SmartInstantiationAwareBeanPostProcessor bp : getBeanPostProcessorCache().smartInstantiationAware) {
 				exposedObject = bp.getEarlyBeanReference(exposedObject, beanName);
 			}
