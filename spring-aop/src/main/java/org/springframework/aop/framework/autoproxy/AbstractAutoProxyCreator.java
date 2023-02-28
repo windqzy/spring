@@ -252,7 +252,9 @@ public abstract class AbstractAutoProxyCreator extends ProxyProcessorSupport
 			if (this.advisedBeans.containsKey(cacheKey)) {
 				return null;
 			}
+			//是否是切面 或者 是否跳过
 			if (isInfrastructureClass(beanClass) || shouldSkip(beanClass, beanName)) {
+				//所有增强的组件会被缓存在advisedBeans中
 				this.advisedBeans.put(cacheKey, Boolean.FALSE);
 				return null;
 			}

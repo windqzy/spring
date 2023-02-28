@@ -263,6 +263,7 @@ public class ConfigurationClassPostProcessor implements BeanDefinitionRegistryPo
 		//bean定义的后置处理过程添加registryId
 		this.registriesPostProcessed.add(registryId);
 		//处理可配置的bean定义信息：所有剩余的bean定义信息 在这里添加进去
+		//处理配置类
 		processConfigBeanDefinitions(registry);
 	}
 

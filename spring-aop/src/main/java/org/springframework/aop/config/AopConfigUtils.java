@@ -132,6 +132,7 @@ public abstract class AopConfigUtils {
 			return null;
 		}
 
+		//注册internalAutoProxyCreator的bean定义到定义中心
 		RootBeanDefinition beanDefinition = new RootBeanDefinition(cls);
 		beanDefinition.setSource(source);
 		beanDefinition.getPropertyValues().add("order", Ordered.HIGHEST_PRECEDENCE);

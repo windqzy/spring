@@ -86,6 +86,7 @@ public abstract class AbstractRefreshableApplicationContext extends AbstractAppl
 	 * @param parent the parent context
 	 */
 	public AbstractRefreshableApplicationContext(@Nullable ApplicationContext parent) {
+		//如果父类有两个构造器，显式的指明应该调用哪一个构造器
 		super(parent);
 	}
 

@@ -332,7 +332,9 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 	 */
 	@Override
 	public ConfigurableEnvironment getEnvironment() {
+		//因为刚刚super中environment是默认初始化的，所以此时environment为null
 		if (this.environment == null) {
+			//所以新创建一个环境
 			this.environment = createEnvironment();
 		}
 		return this.environment;
@@ -344,6 +346,7 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 	 * a custom {@link ConfigurableEnvironment} implementation.
 	 */
 	protected ConfigurableEnvironment createEnvironment() {
+		//创建一个环境
 		return new StandardEnvironment();
 	}
 

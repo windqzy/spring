@@ -11,7 +11,8 @@ repositories {
 }
 
 dependencies {
-    api(project(":spring-context"))
+    api(project(":spring-context"))//IOC容器
+    api(project(":spring-aspects"))//AOP切面
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
     // https://mvnrepository.com/artifact/org.projectlombok/lombok
