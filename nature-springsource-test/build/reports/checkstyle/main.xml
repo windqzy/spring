@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="9.0.1">
+<file name="/Users/apple/IdeaProjects/spring-framework-main/nature-springsource-test/src/main/java/com/nature/spring/AnnotationMainTest.java">
+<error line="1" severity="error" message="Line does not match expected header line of &apos;^\Q/*\E$&apos;." source="io.spring.javaformat.checkstyle.check.SpringHeaderCheck"/>
+<error line="4" column="1" severity="error" message="&apos;org.springframework.context.ApplicationContext&apos; 应与之前的导入语句通过空行隔开。" source="com.puppycrawl.tools.checkstyle.checks.imports.ImportOrderCheck"/>
+<error line="7" column="1" severity="error" message="工具类应隐藏 public 构造器。" source="com.puppycrawl.tools.checkstyle.checks.design.HideUtilityClassConstructorCheck"/>
+<error line="7" column="14" severity="error" message="Class name &apos;AnnotationMainTest&apos; must not end with &apos;Test&apos; (checked pattern &apos;^[A-Z][a-zA-Z0-9_$]*(?&lt;!Test)$&apos;)." source="com.puppycrawl.tools.checkstyle.checks.naming.TypeNameCheck"/>
+</file>
+<file name="/Users/apple/IdeaProjects/spring-framework-main/nature-springsource-test/src/main/java/com/nature/spring/AnnotationMainTest1.java">
+<error line="1" severity="error" message="Line does not match expected header line of &apos;^\Q/*\E$&apos;." source="io.spring.javaformat.checkstyle.check.SpringHeaderCheck"/>
+<error line="6" column="1" severity="error" message="&apos;org.springframework.context.ApplicationContext&apos; 应与之前的导入语句通过空行隔开。" source="com.puppycrawl.tools.checkstyle.checks.imports.ImportOrderCheck"/>
+<error line="9" column="1" severity="error" message="工具类应隐藏 public 构造器。" source="com.puppycrawl.tools.checkstyle.checks.design.HideUtilityClassConstructorCheck"/>
+</file>
+<file name="/Users/apple/IdeaProjects/spring-framework-main/nature-springsource-test/src/main/java/com/nature/spring/Cat.java">
+<error line="1" severity="error" message="Line does not match expected header line of &apos;^\Q/*\E$&apos;." source="io.spring.javaformat.checkstyle.check.SpringHeaderCheck"/>
+<error line="8" column="1" severity="error" message="Annotation style must be &apos;COMPACT&apos;." source="com.puppycrawl.tools.checkstyle.checks.annotation.AnnotationUseStyleCheck"/>
+<error line="16" column="24" severity="error" message="对实例属性 &apos;name&apos; 的引用需要 &quot;this.&quot;。" source="com.puppycrawl.tools.checkstyle.checks.coding.RequireThisCheck"/>
+<error line="26" column="44" severity="error" message="对实例属性 &apos;name&apos; 的引用需要 &quot;this.&quot;。" source="com.puppycrawl.tools.checkstyle.checks.coding.RequireThisCheck"/>
+</file>
+<file name="/Users/apple/IdeaProjects/spring-framework-main/nature-springsource-test/src/main/java/com/nature/spring/MainTest.java">
+<error line="1" severity="error" message="header.missing" source="io.spring.javaformat.checkstyle.check.SpringHeaderCheck"/>
+<error line="5" column="1" severity="error" message="工具类应隐藏 public 构造器。" source="com.puppycrawl.tools.checkstyle.checks.design.HideUtilityClassConstructorCheck"/>
+<error line="5" column="14" severity="error" message="Class name &apos;MainTest&apos; must not end with &apos;Test&apos; (checked pattern &apos;^[A-Z][a-zA-Z0-9_$]*(?&lt;!Test)$&apos;)." source="com.puppycrawl.tools.checkstyle.checks.naming.TypeNameCheck"/>
+</file>
+<file name="/Users/apple/IdeaProjects/spring-framework-main/nature-springsource-test/src/main/java/com/nature/spring/Person.java">
+<error line="1" severity="error" message="Line does not match expected header line of &apos;^\Q/*\E$&apos;." source="io.spring.javaformat.checkstyle.check.SpringHeaderCheck"/>
+<error line="15" column="24" severity="error" message="对实例属性 &apos;name&apos; 的引用需要 &quot;this.&quot;。" source="com.puppycrawl.tools.checkstyle.checks.coding.RequireThisCheck"/>
+<error line="25" column="24" severity="error" message="对实例属性 &apos;cat&apos; 的引用需要 &quot;this.&quot;。" source="com.puppycrawl.tools.checkstyle.checks.coding.RequireThisCheck"/>
+<error line="35" column="44" severity="error" message="对实例属性 &apos;name&apos; 的引用需要 &quot;this.&quot;。" source="com.puppycrawl.tools.checkstyle.checks.coding.RequireThisCheck"/>
+</file>
+<file name="/Users/apple/IdeaProjects/spring-framework-main/nature-springsource-test/src/main/java/com/nature/spring/config/MyConfig.java">
+<error line="1" severity="error" message="Line does not match expected header line of &apos;^\Q/*\E$&apos;." source="io.spring.javaformat.checkstyle.check.SpringHeaderCheck"/>
+<error line="3" column="8" severity="error" message="无用导入 - com.nature.spring.Cat 。" source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+<error line="4" column="8" severity="error" message="无用导入 - com.nature.spring.Person 。" source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+<error line="5" column="8" severity="error" message="无用导入 - com.nature.spring.register.MyImportBeanDefinitionRegistrar 。" source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+<error line="6" column="1" severity="error" message="&apos;org.springframework.beans.factory.config.BeanDefinition&apos; 应与之前的导入语句通过空行隔开。" source="com.puppycrawl.tools.checkstyle.checks.imports.ImportOrderCheck"/>
+<error line="6" column="8" severity="error" message="无用导入 - org.springframework.beans.factory.config.BeanDefinition 。" source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+<error line="7" column="8" severity="error" message="无用导入 - org.springframework.beans.factory.support.BeanDefinitionRegistry 。" source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+<error line="8" column="8" severity="error" message="无用导入 - org.springframework.beans.factory.support.BeanNameGenerator 。" source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+<error line="9" column="8" severity="error" message="无用导入 - org.springframework.beans.factory.support.RootBeanDefinition 。" source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+<error line="10" column="46" severity="error" message="不应使用 &apos;.*&apos; 形式的导入 - org.springframework.context.annotation.* 。" source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
+<error line="11" column="8" severity="error" message="无用导入 - org.springframework.core.type.AnnotationMetadata 。" source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+<error line="13" severity="error" message="Javadoc 首句应以句号结尾。" source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocStyleCheck"/>
+<error line="19" column="1" severity="error" message="缺少 @author 标签。" source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheck"/>
+</file>
+<file name="/Users/apple/IdeaProjects/spring-framework-main/nature-springsource-test/src/main/java/com/nature/spring/register/LearnAware.java">
+<error line="1" severity="error" message="Line does not match expected header line of &apos;^\Q/*\E$&apos;." source="io.spring.javaformat.checkstyle.check.SpringHeaderCheck"/>
+<error line="3" column="8" severity="error" message="无用导入 - com.nature.spring.Cat 。" source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+<error line="4" column="1" severity="error" message="&apos;org.springframework.beans.factory.annotation.Autowired&apos; 应与之前的导入语句通过空行隔开。" source="com.puppycrawl.tools.checkstyle.checks.imports.ImportOrderCheck"/>
+<error line="5" column="8" severity="error" message="无用导入 - org.springframework.beans.factory.annotation.Lookup 。" source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+<error line="7" column="8" severity="error" message="无用导入 - org.springframework.context.ApplicationContextAware 。" source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+<error line="17" column="48" severity="error" message="对实例属性 &apos;name&apos; 的引用需要 &quot;this.&quot;。" source="com.puppycrawl.tools.checkstyle.checks.coding.RequireThisCheck"/>
+<error line="25" column="24" severity="error" message="对实例属性 &apos;learnApplicationContext&apos; 的引用需要 &quot;this.&quot;。" source="com.puppycrawl.tools.checkstyle.checks.coding.RequireThisCheck"/>
+<error line="33" column="24" severity="error" message="对实例属性 &apos;name&apos; 的引用需要 &quot;this.&quot;。" source="com.puppycrawl.tools.checkstyle.checks.coding.RequireThisCheck"/>
+</file>
+<file name="/Users/apple/IdeaProjects/spring-framework-main/nature-springsource-test/src/main/java/com/nature/spring/register/LearnAware1.java">
+<error line="1" severity="error" message="Line does not match expected header line of &apos;^\Q/*\E$&apos;." source="io.spring.javaformat.checkstyle.check.SpringHeaderCheck"/>
+<error line="16" column="48" severity="error" message="对实例属性 &apos;name&apos; 的引用需要 &quot;this.&quot;。" source="com.puppycrawl.tools.checkstyle.checks.coding.RequireThisCheck"/>
+<error line="29" column="24" severity="error" message="对实例属性 &apos;applicationContext&apos; 的引用需要 &quot;this.&quot;。" source="com.puppycrawl.tools.checkstyle.checks.coding.RequireThisCheck"/>
+<error line="33" column="24" severity="error" message="对实例属性 &apos;name&apos; 的引用需要 &quot;this.&quot;。" source="com.puppycrawl.tools.checkstyle.checks.coding.RequireThisCheck"/>
+</file>
+<file name="/Users/apple/IdeaProjects/spring-framework-main/nature-springsource-test/src/main/java/com/nature/spring/register/MyImportBeanDefinitionRegistrar.java">
+<error line="1" severity="error" message="Line does not match expected header line of &apos;^\Q/*\E$&apos;." source="io.spring.javaformat.checkstyle.check.SpringHeaderCheck"/>
+<error line="1" severity="error" message="文件未以空行结尾。" source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>
+<error line="4" column="1" severity="error" message="&apos;org.springframework.beans.factory.config.BeanDefinition&apos; 应与之前的导入语句通过空行隔开。" source="com.puppycrawl.tools.checkstyle.checks.imports.ImportOrderCheck"/>
+<error line="4" column="8" severity="error" message="无用导入 - org.springframework.beans.factory.config.BeanDefinition 。" source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+</file>
+</checkstyle>
