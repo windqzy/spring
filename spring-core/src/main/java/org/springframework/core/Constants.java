@@ -64,6 +64,7 @@ public class Constants {
 		this.className = clazz.getName();
 		Field[] fields = clazz.getFields();
 		for (Field field : fields) {
+			//查找到所有public static final的字段放入常量缓存池中使用
 			if (ReflectionUtils.isPublicStaticFinal(field)) {
 				String name = field.getName();
 				try {

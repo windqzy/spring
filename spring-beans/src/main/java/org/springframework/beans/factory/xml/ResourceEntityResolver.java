@@ -67,6 +67,7 @@ public class ResourceEntityResolver extends DelegatingEntityResolver {
 	 */
 	public ResourceEntityResolver(ResourceLoader resourceLoader) {
 		super(resourceLoader.getClassLoader());
+		//资源加载器的赋值
 		this.resourceLoader = resourceLoader;
 	}
 
