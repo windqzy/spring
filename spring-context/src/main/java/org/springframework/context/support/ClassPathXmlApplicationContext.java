@@ -143,6 +143,7 @@ public class ClassPathXmlApplicationContext extends AbstractXmlApplicationContex
 		setConfigLocations(configLocations);
 		//构造器里面刷新环境
 		if (refresh) {
+			//模版方法：抽象类提供的
 			refresh();
 		}
 	}

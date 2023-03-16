@@ -130,7 +130,7 @@ public abstract class AbstractXmlApplicationContext extends AbstractRefreshableC
 		String[] configLocations = getConfigLocations();
 		if (configLocations != null) {
 			//处理beans.xml
-			reader.loadBeanDefinitions(configLocations);
+ 			reader.loadBeanDefinitions(configLocations);
 		}
 	}
 

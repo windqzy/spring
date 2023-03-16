@@ -37,22 +37,26 @@ public class XmlValidationModeDetector {
 
 	/**
 	 * Indicates that the validation should be disabled.
+	 * 表明不使用验证
 	 */
 	public static final int VALIDATION_NONE = 0;
 
 	/**
 	 * Indicates that the validation mode should be auto-guessed, since we cannot find
 	 * a clear indication (probably choked on some special characters, or the like).
+	 * 表明自动判断验证方式：根据文件的声明类型
 	 */
 	public static final int VALIDATION_AUTO = 1;
 
 	/**
 	 * Indicates that DTD validation should be used (we found a "DOCTYPE" declaration).
+	 * 表明使用dtd验证方式（发现文档中有DOCTYPE的声明）
 	 */
 	public static final int VALIDATION_DTD = 2;
 
 	/**
 	 * Indicates that XSD validation should be used (found no "DOCTYPE" declaration).
+	 * 表明使用xsd验证方式（发现文档中没有DOCTYPE的声明）
 	 */
 	public static final int VALIDATION_XSD = 3;
 
@@ -60,22 +64,26 @@ public class XmlValidationModeDetector {
 	/**
 	 * The token in an XML document that declares the DTD to use for validation
 	 * and thus that DTD validation is being used.
+	 * 如果文档中有这个DOCTYPE声明：则使用dtd验证方式
 	 */
 	private static final String DOCTYPE = "DOCTYPE";
 
 	/**
 	 * The token that indicates the start of an XML comment.
+	 * 这个是xml文档注释开始的标识
 	 */
 	private static final String START_COMMENT = "<!--";
 
 	/**
 	 * The token that indicates the end of an XML comment.
+	 * 这个是xml文档注释结束的标识
 	 */
 	private static final String END_COMMENT = "-->";
 
 
 	/**
 	 * Indicates whether or not the current parse position is inside an XML comment.
+	 * 标识当前解析位置是否包含一个注释
 	 */
 	private boolean inComment;
 

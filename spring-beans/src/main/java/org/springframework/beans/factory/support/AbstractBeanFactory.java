@@ -117,21 +117,26 @@ import org.springframework.util.StringValueResolver;
 public abstract class AbstractBeanFactory extends FactoryBeanRegistrySupport implements ConfigurableBeanFactory {
 
 	/** Parent bean factory, for bean inheritance support. */
+	//父工厂
 	@Nullable
 	private BeanFactory parentBeanFactory;
 
 	/** ClassLoader to resolve bean class names with, if necessary. */
+	//使用类加载器解析
 	@Nullable
 	private ClassLoader beanClassLoader = ClassUtils.getDefaultClassLoader();
 
 	/** ClassLoader to temporarily resolve bean class names with, if necessary. */
+	//临时类加载器
 	@Nullable
 	private ClassLoader tempClassLoader;
 
 	/** Whether to cache bean metadata or rather reobtain it for every access. */
+	//bean元数据的缓存是否开启
 	private boolean cacheBeanMetadata = true;
 
 	/** Resolution strategy for expressions in bean definition values. */
+	//bean表达式的解析策略
 	@Nullable
 	private BeanExpressionResolver beanExpressionResolver;
 

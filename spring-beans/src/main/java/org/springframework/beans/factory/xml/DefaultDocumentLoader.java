@@ -68,12 +68,14 @@ public class DefaultDocumentLoader implements DocumentLoader {
 	@Override
 	public Document loadDocument(InputSource inputSource, EntityResolver entityResolver,
 			ErrorHandler errorHandler, int validationMode, boolean namespaceAware) throws Exception {
-
+		//创建一个文档建造者工厂：也就是生产文档建造者的工厂
 		DocumentBuilderFactory factory = createDocumentBuilderFactory(validationMode, namespaceAware);
 		if (logger.isTraceEnabled()) {
 			logger.trace("Using JAXP provider [" + factory.getClass().getName() + "]");
 		}
+		//使用工厂创建一个文档建造者
 		DocumentBuilder builder = createDocumentBuilder(factory, entityResolver, errorHandler);
+		//文档建造者对资源进行解析
 		return builder.parse(inputSource);
 	}
 
@@ -88,9 +90,12 @@ public class DefaultDocumentLoader implements DocumentLoader {
 	protected DocumentBuilderFactory createDocumentBuilderFactory(int validationMode, boolean namespaceAware)
 			throws ParserConfigurationException {
 
+		//创建一个文档建造者工厂的实例：这里的创建很有意思
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+		//设置工厂是否开启命名空间的感知能力
 		factory.setNamespaceAware(namespaceAware);
 
+		//设置工厂对文件的校验方式是什么规范的
 		if (validationMode != XmlValidationModeDetector.VALIDATION_NONE) {
 			factory.setValidating(true);
 			if (validationMode == XmlValidationModeDetector.VALIDATION_XSD) {
@@ -127,11 +132,13 @@ public class DefaultDocumentLoader implements DocumentLoader {
 	protected DocumentBuilder createDocumentBuilder(DocumentBuilderFactory factory,
 			@Nullable EntityResolver entityResolver, @Nullable ErrorHandler errorHandler)
 			throws ParserConfigurationException {
-
+		//创建一个文档建造者
 		DocumentBuilder docBuilder = factory.newDocumentBuilder();
+		//文档建造者设置一个实体解析器工作
 		if (entityResolver != null) {
 			docBuilder.setEntityResolver(entityResolver);
 		}
+		//文档建造者设置一个错误处理器工作
 		if (errorHandler != null) {
 			docBuilder.setErrorHandler(errorHandler);
 		}
