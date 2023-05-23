@@ -1016,6 +1016,7 @@ public class ResolvableType implements Serializable {
 	 * @see #getRawClass()
 	 */
 	public static ResolvableType forRawClass(@Nullable Class<?> clazz) {
+		//直接返回内部类实现
 		return new ResolvableType(clazz) {
 			@Override
 			public ResolvableType[] getGenerics() {

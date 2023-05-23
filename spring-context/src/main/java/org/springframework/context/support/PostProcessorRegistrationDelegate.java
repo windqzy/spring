@@ -78,15 +78,17 @@ final class PostProcessorRegistrationDelegate {
 		// to ensure that your proposal does not result in a breaking change:
 		// https://github.com/spring-projects/spring-framework/issues?q=PostProcessorRegistrationDelegate+is%3Aclosed+label%3A%22status%3A+declined%22
 
-		// Invoke BeanDefinitionRegistryPostProcessors first, if any.
+		// Invoke BeanDefinitionRegistryPostProcessors first, if any如果有.
 		Set<String> processedBeans = new HashSet<>();
 
 		//beanFactory是否是一个bean定义的注册中心
 		if (beanFactory instanceof BeanDefinitionRegistry registry) {
+			//普通的工厂增强器
 			List<BeanFactoryPostProcessor> regularPostProcessors = new ArrayList<>();
+			//注册中心工厂增强器
 			List<BeanDefinitionRegistryPostProcessor> registryProcessors = new ArrayList<>();
 
-			//工厂的增强器
+			//原始的工厂的增强器
 			for (BeanFactoryPostProcessor postProcessor : beanFactoryPostProcessors) {
 				// 判断是否是bean定义的注册中心的增强器
 				if (postProcessor instanceof BeanDefinitionRegistryPostProcessor registryProcessor) {
@@ -163,7 +165,6 @@ final class PostProcessorRegistrationDelegate {
 			invokeBeanFactoryPostProcessors(registryProcessors, beanFactory);
 			invokeBeanFactoryPostProcessors(regularPostProcessors, beanFactory);
 		}
-
 		else {
 			// Invoke factory processors registered with the context instance.
 			invokeBeanFactoryPostProcessors(beanFactoryPostProcessors, beanFactory);

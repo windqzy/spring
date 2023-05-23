@@ -1,8 +1,6 @@
 package com.nature.spring;
 
 import com.nature.spring.config.MyConfig;
-import com.nature.spring.bean.LearnAware;
-import com.nature.spring.bean.LearnAware1;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

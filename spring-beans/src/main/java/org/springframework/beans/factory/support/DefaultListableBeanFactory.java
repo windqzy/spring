@@ -274,6 +274,7 @@ public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFacto
 	 * @see org.springframework.core.annotation.AnnotationAwareOrderComparator
 	 */
 	public void setDependencyComparator(@Nullable Comparator<Object> dependencyComparator) {
+		//在创建读取期的时候赋值
 		this.dependencyComparator = dependencyComparator;
 	}
 
